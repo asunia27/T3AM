@@ -2,10 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import Sidebar from './sidebar';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" id ="outer-container">
+      <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
