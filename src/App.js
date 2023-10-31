@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import {Routes, Route} from 'react-router-dom';
 import Sidebar from './sidebar';
+import Inquiry from './inquiry';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ const About = () => (
 const Contact = () => (
   <div className='contact'>
     <h1>CONTACT PROFESSIONAL PLACEHOLDER</h1>
+    <Inquiry/>
   </div>
 );
 
