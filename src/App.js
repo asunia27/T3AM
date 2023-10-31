@@ -3,7 +3,7 @@ import React from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import {NavLink, Routes, Route} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import Sidebar from './sidebar';
 
 function App() {
@@ -11,21 +11,10 @@ function App() {
     <div className="App" id ="outer-container">
         <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
         <h1>Medway</h1>
-        <Navigation />
         <Main />
       </div>
     );
 }
-
-const Navigation = () => (
-  <nav>
-    <ul>
-      <li><NavLink to='/'>Home</NavLink></li>
-      <li><NavLink to='/about'>School Information</NavLink></li>
-      <li><NavLink to='/contact'>Contact a Professional</NavLink></li>
-    </ul>
-  </nav>
-);
 
 const Main = () => (
   <Routes>
@@ -49,7 +38,7 @@ const About = () => (
 
 const Contact = () => (
   <div className='contact'>
-    
+    <h1>CONTACT PROFESSIONAL PLACEHOLDER</h1>
   </div>
 );
 
