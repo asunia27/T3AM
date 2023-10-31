@@ -5,9 +5,11 @@ import './sidebar.css';
 export default props => {
     return (
         <Menu>
-            <li><NavLink to='/'>Home</NavLink></li>
-            <li><NavLink to='/about'>Medical School Information</NavLink></li>
-            <li><NavLink to='/contact'>Ask a Professional</NavLink></li>
+            <div className='sidebar-title'> Menu </div>
+            <div><NavLink to='/' className='bm-link'>Home</NavLink></div>
+            <div><NavLink to='/timeline' className='bm-link'>Edit Timeline</NavLink></div>
+            <div><NavLink to='/about' className='bm-link'>Medical School Information</NavLink></div>
+            <div><NavLink to='/contact' className='bm-link'>Ask a Professional</NavLink></div>
         </Menu>
     );
 };

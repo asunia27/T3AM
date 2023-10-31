@@ -1,4 +1,6 @@
 /* Position and sizing of burger button */
+
+
 .bm-burger-button {
     position: fixed;
     width: 36px;
@@ -39,11 +41,12 @@
   
   /* General sidebar styles */
   .bm-menu {
-    background: #373a47;
-    padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
+    background: #FFFFFF;
+    text-align: center;
     display: flex;
     flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    justify-content: center;
   }
   
   /* Morph shape necessary with bubble or elastic */
@@ -56,27 +59,46 @@
     color: #b8b7ad;
     padding: 0.8em;
   }
-  
+
   /* Individual item */
   .bm-item {
     flex: 1; /* Distribute equal space to each item */
     display: flex; /* Use flex layout for item contents */
-    align-items: center; /* Vertically center item content */
-    justify-content: center; /* Horizontally center item content */
-    color: #d1d1d1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-size: 20px;
     text-align: center;
     text-decoration: none;
     transition: color 0.2s;
-    border: 1px solid #bdc3c7; /* Add a border to create a box effect */
-    margin: 5px; /* Add margin for spacing between items */
-    padding: 10px; /* Add padding for inner content spacing */
-  }
-
-  .bm-item:hover{
-    color: #ffffff;
+    font-weight: bold;
+    border: 1px solid #FFFFFF; /* Add a border to create a box effect */
+    background-color: #D9D9D9;
+    margin-top: 300px; /* Add margin for spacing between items */
+    margin: 40px;
+    padding: 20px 60px; /* Add padding for inner content spacing */
+    border-radius: 10px;
   }
   
   /* Styling of overlay */
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
+  }
+  .sidebar-title-container {
+    margin-top: 10px;
+  }
+  .sidebar-title {
+    text-align: center;
+    /*background-color: #333;*/
+    color: #000000;
+    background-color: #FFFFFF;
+    padding: 3px;
+    font-size: 40px;
+    font-weight: bold;
+    border: none;
+    margin-top: 0px;
+  }
+  .bm-link {
+    color:#000000;
   }

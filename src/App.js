@@ -19,6 +19,7 @@ function App() {
 const Main = () => (
   <Routes>
     <Route path='/' Component={Home}></Route>
+    <Route path='/timeline' Component={Timeline}></Route>
     <Route path='/about' Component={About}></Route>
     <Route path='/contact' Component={Contact}></Route>
   </Routes>
@@ -27,6 +28,12 @@ const Main = () => (
 const Home = () => (
   <div className='home'>
     <h1>TIMELINE PLACEHOLDER</h1>
+  </div>
+);
+
+const Timeline = () => (
+  <div className='timeline'>
+    <h1>Timeline PLACEHOLDER</h1>
   </div>
 );
 
