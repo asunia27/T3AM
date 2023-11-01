@@ -1,17 +1,21 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import { Navigate } from 'react-router-dom';
 
 export default function Notif(message, type, path) {
-    if(type == 'success'){
+    if(type === 'success'){
         return(
-            toast.success(message, {
+            //change page to path
+            <Navigate replace to path/>,
+            //success message
+            toast.success(path, {
                 autoClose: 2000
-                //on close, move to path
             })
         );
     }
-    else if(type == 'error'){
+    else if(type === 'error'){
         return(
+            //error message
             toast.error(message, {
                 autoClose: 2000
             })
