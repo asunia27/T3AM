@@ -37,7 +37,9 @@ export default function Inquiry() {
                 <textarea name='inquiryInput' className='form-control' placeholder='Inquiry begins here...' style={{minHeight: '15rem'}}></textarea>
             </div>
             <div className='mb-5'>
-                <button onClick={Notif} className='btn btn-primary btn-lg px-5' style={{backgroundColor: '#2b85a1'}}>Send</button>
+                <button onClick={
+                    () => Notif('Inquiry sent successfully!', 'success', '/')
+                } className='btn btn-primary btn-lg px-5' style={{backgroundColor: '#2b85a1'}}>Send</button>
             </div>  
         </div>
     );
