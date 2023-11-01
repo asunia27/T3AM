@@ -6,6 +6,8 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import {Routes, Route} from 'react-router-dom';
 import Sidebar from './sidebar';
 import Inquiry from './inquiry';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
         <div className='d-flex justify-content-center'>
           <Main />
         </div>
+        <ToastContainer/>
       </div>
     );
 }
