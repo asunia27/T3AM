@@ -1,5 +1,5 @@
 import React from 'react';
-import { toast } from 'react-toastify';
+import Notif from './notif';
 import DropdownSelect from './general';
 
 export default function Inquiry() {
@@ -18,12 +18,6 @@ export default function Inquiry() {
         'Recommendation Letters',
         'Other'
     ];
-
-    const Notif = () => {
-        toast.success("Inquiry sent successfully!", {
-            autoClose: 2000
-        })
-    }
 
     return(
         <div>
