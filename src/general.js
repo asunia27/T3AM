@@ -8,15 +8,14 @@ import React from 'react';
 */}
 
 {/* Dropdown menu. Self explanatory */}
-export default function DropdownSelect({options}){
+export default function DropdownSelect({placeholder, options}) {
     const listItems = options.map(item => 
-        <option>{item}</option>
+        <option value={item}>{item}</option>
     );
     return (
-        <div>
-            <select>
-                {listItems}
-            </select>
-        </div>
+        <select className='form-select'>
+            <option value="" disabled selected hidden>{placeholder}</option>
+            {listItems}
+        </select>
     );
 }

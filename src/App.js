@@ -6,13 +6,18 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import {Routes, Route} from 'react-router-dom';
 import Sidebar from './sidebar';
 import Inquiry from './inquiry';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <div className="App" id ="outer-container">
         <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
-        <h1>Medway</h1>
-        <Main />
+        <h1 className='my-4'>Medway</h1>
+        <div className='d-flex justify-content-center'>
+          <Main />
+        </div>
+        <ToastContainer/>
       </div>
     );
 }
@@ -46,7 +51,6 @@ const About = () => (
 
 const Contact = () => (
   <div className='contact'>
-    <h1>CONTACT PROFESSIONAL PLACEHOLDER</h1>
     <Inquiry/>
   </div>
 );
