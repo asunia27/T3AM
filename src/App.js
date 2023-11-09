@@ -7,6 +7,7 @@ import {Routes, Route} from 'react-router-dom';
 import Sidebar from './sidebar';
 import Inquiry from './inquiry';
 import {ToastContainer} from 'react-toastify';
+import NodeMod from './node-mod';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
@@ -39,7 +40,8 @@ const Home = () => (
 
 const Timeline = () => (
   <div className='timeline'>
-    <h1>Timeline PLACEHOLDER</h1>
+    <h1>EDIT TIMELINE PLACEHOLDER</h1>
+    <NodeMod/>
   </div>
 );
 
