@@ -28,8 +28,8 @@ export default function Inquiry() {
     return(
         <div>
             <div>
-                <h3>Ask a Pro!</h3>
-                <p>Select your medical field and what topic you'd like to ask about, compose your message, and we will send your inquiry to a relevant professional!</p>
+                <h3 style={{ color: '#4692A2' }}>Ask a Pro!</h3>
+                <p style={{ color: '#4692A2' }}>Select your medical field and what topic you'd like to ask about, compose your message, and we will send your inquiry to a relevant professional!</p>
             </div>
                 <div className='d-flex justify-content-between row mb-5'>
                 <div className='col-5'>

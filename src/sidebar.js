@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom';
 import './sidebar.css';
 export default props => {
     return (
-        <Menu>
+        <Menu height={'100%'}>
             <div className='sidebar-title'> Menu </div>
             <div><NavLink to='/' className='bm-link'>Home</NavLink></div>
             <div><NavLink to='/timeline' className='bm-link'>Edit Timeline</NavLink></div>
