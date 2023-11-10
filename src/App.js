@@ -52,7 +52,7 @@ const Timeline = () => (
 
 const About = () => (
   <div className='about'>
-    <Info
+    {/*(<Info
             universityName="The University of Texas at Dallas"
             location="Richardson, Texas"
             logoSrc={utdlogo}
@@ -63,7 +63,9 @@ const About = () => (
             amcasAccepted="Yes"
             aacomas="No"
             courseworkDescription="blah blah blah blah"
-        />
+    />*/}
+
+    <SearchPage/>
   </div>
 );
 
