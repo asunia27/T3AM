@@ -1,0 +1,118 @@
+body {
+    background-color: #032731;
+}
+.notes-box {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 250px; /* Adjust the width as needed */
+    height: 890px;
+    background-color: #0C404F;
+    padding: 20px;
+  }
+  
+  .notes-textarea {
+    width: 100%;
+    height: 60%;
+    resize: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #DAE0E3;
+    font-size: 16px;
+    outline: none;
+    border-radius: 5px;
+    border-radius: 15px;
+  }
+  .notes-box h2 {
+    position:relative;
+    color: #4692A2;
+    padding-top: 50px;
+    text-align: left;
+    padding-left: 10px;
+  }
+  
+  .reqs {
+    position: absolute;
+    top: 200px;
+    left: 550px;
+    width: 600px; /* Adjust the width as needed */
+    height: 280px;
+    background-color: #DAE0E3;
+    border-right: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 15px;
+  }
+
+  .reqs li{
+    list-style: none;
+    text-align: left;
+    padding: 10px;
+    top: 20px; 
+    width: 100%; 
+  }
+
+  .coursework {
+    position: absolute;
+    left: 260px;
+    top: 490px;
+    width: 890px;
+    height: 400px;
+    background-color: #DAE0E3;
+    border-right: 1px solid #ccc;
+    padding: 0px;
+    text-align: left;
+    border-radius: 15px;
+  }
+  .coursework h2 {
+    padding: 10px;
+    text-align: left;
+  }
+  .coursework p {
+    padding-left: 10px;
+  }
+
+  .title > h1 {
+    position: relative;
+    font-weight: 700px;
+    font-size: 40px;
+    text-align: left;
+    color: #DAE0E3;
+    right: 120px;
+
+  }
+  .title > h2 {
+    font-weight: 700px;
+    font-size: 20px;
+    color: #4692A2;
+    position: relative;
+    right: 320px;
+  
+  }
+  .utdlogo img {
+    position: absolute; /* Use absolute positioning for the logo */
+    left: 260px; /* Adjust the left value as needed to align with .reqs */
+    top: 200px;
+    width: 280px;
+    height: 280px;
+    border: 1px solid blue;
+    background-color: white;
+    border-radius: 15px;
+  }
+  .backarea {
+    position: absolute;
+    border: 1px solid #0C404F; 
+    padding: 10px;
+    display: inline-block;
+    background-color: #DAE0E3;
+    border-radius: 15px;
+    width: 210px;
+    top: 680px;
+    left: 20px;
+}
+
+.bm-link {
+    text-decoration: none;
+    color: #4692A2;
+    font-size: 40;
+    font-weight: 800;
+}
