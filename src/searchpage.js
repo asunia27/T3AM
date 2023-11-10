@@ -26,7 +26,7 @@ const SearchPage = () => {
     }
 
     return (
-        <div>
+        <div className="Search">
             <input
                 type="text"
                 placeholder="Search here"
@@ -34,24 +34,18 @@ const SearchPage = () => {
                 value={searchInput}
             />
 
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>City</th>
-                    <th>State</th>
-                </tr>
-
-                {schools.map( (name, index) => {
-                    <div>
-                        <tr>
-                            <td>{schools.name}</td>
-                            <td>{schools.city}</td>
-                            <td>{schools.state}</td>
-                        </tr>
-                    </div>
-                })}
-            </table>
-                
+            {schools.filter(school =>{
+                if (searchInput === '') {
+                    return school;
+                } else if (school.name.toLowerCase().includes(searchInput.toLowerCase())) {
+                    return school;
+                }
+            }).map( (school, index) => {
+                <div key="index">
+                    <h2>{school.name}</h2>
+                    <p>{school.city + ", " + school.state}</p>
+                </div>
+            })}
         </div>
 
     );
