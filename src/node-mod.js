@@ -1,31 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import DropdownSelect from './general';
 
-//in general, going to move this whole thing into a sidebar
+//in general, going to move this whole thing into a sidebar (use same thing as sidebar.js)
 //then add in the buttons to differentiate between add / edit
 //remove node probably just needs timeline / node components first lol
 
 export default function NodeMod() {
-    const [items, setItems] = useState(['x', 'y']);
+    const [taskList, setTaskList] = useState([]);
+    const [task, setTask] = useState("");
 
-    //this should just create a task component and add it to the list / add to a basic list, unsure rn
-    const handleSubmit = (e) => {
-        // Prevent the browser from reloading the page
-        e.preventDefault();
-        
-        //go into setItems array length - 1
-        //set the state to e.data
+    //function to add task
+    const addTask = () => {
+        //create temp then push new task then replace
+        let holdArr = taskList;
+        holdArr.push(task);
+        setTaskList(holdArr);
+        setTask("");
+    }
 
-        /* Read the form data
-        const form = e.target;
-        const formData = new FormData(form);*/
-    
-        /* You can pass formData as a fetch body directly:
-        fetch('/some-api', { method: form.method, body: formData });*/
-    
-        /* Or you can work with it as a plain object:
-        const formJson = Object.fromEntries(formData.entries());
-        console.log(formJson);*/
+    //function to remove task, needs index to filter out
+    const removeTask = (index) => {
+        let holdArr = taskList.filter((task, i) => i !== index);
+        setTaskList(holdArr);
+    }
+
+    const taskItem = (task, index) => {
     }
 
     const semester = [
@@ -46,6 +45,7 @@ export default function NodeMod() {
 
     return(
         <div>
+            {/* for the dropdown, default should only be set if creating new */}
             <div className='d-flex justify-content-between row mb-5'>
                     <div className='col-5'>
                         <DropdownSelect placeholder={'Semester*'} options={semester}/>
@@ -58,23 +58,34 @@ export default function NodeMod() {
                 <h3>Tasks</h3>
             </div>
             <div>
-                {/*
-                existing tasks here
-                -probably mapped list
-                -use function when mapping that turns list items (tasks) into textarea + button to delete
-                    -figure out how to make it display w/o reloading (state variable?)
-                -maybe even get rid of below and replace with just rendering initial list with task Type...
-                -can actually just throw a mylist here probs
-                */}
+                <div className="taskList-container">
+                    {taskList.length > 0 && 
+                    taskList.map((task, index) => 
+                            //need to reformat everything here
+                            <div key={index}>
+                                {task}
+                                {" "}
+                                <input value = {task} type="checkbox" />
+                                {" "}
+                                <button onClick={ () => removeTask(index)}>x</button>
+                            </div>
+                        )}
+                </div>
             </div>
             <div className='mb-5'>
-                <form onSubmit = {handleSubmit}>
-                    <textarea name='taskInput' className='form-control' placeholder='Type...'></textarea>
-                    <button type="submit">+</button>
-                </form>
+                <input
+                    placeholder = "Type..."
+                    type = "text"
+                    value = {task}
+                    onChange={ (e) => setTask(e.target.value)}
+                />{" "}
+                <button onClick={addTask}>+</button>
             </div>
             <div className='mb-5'>
+                {/*on click, needs to create / save node info*/}
                 <button>confirm</button>
+                {" "}
+                {/*on click, needs to exit sidebar*/}
                 <button>cancel</button>
             </div>
         </div>
