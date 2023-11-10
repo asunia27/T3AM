@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import DropdownSelect from './general';
 
-//in general, going to move this whole thing into a sidebar (use same thing as sidebar.js)
+//also need to change colors lol
+//in general, going to move this whole thing into a sidebar / popup
 //then add in the buttons to differentiate between add / edit
-//remove node probably just needs timeline / node components first lol
+//node needs to be able to be saved
 
 export default function NodeMod() {
     const [taskList, setTaskList] = useState([]);
@@ -45,7 +46,7 @@ export default function NodeMod() {
 
     return(
         <div>
-            {/* for the dropdown, default should only be set if creating new */}
+            {/* for the dropdown, default should only be set if creating new (maybe have a status var)*/}
             <div className='d-flex justify-content-between row mb-5'>
                     <div className='col-5'>
                         <DropdownSelect placeholder={'Semester*'} options={semester}/>
