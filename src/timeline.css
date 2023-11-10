@@ -1,0 +1,28 @@
+.node-icon {
+    height: 10rem;
+}
+
+.arrow-btn {
+    height: 3rem;
+}
+
+.node-container {
+    padding-left: 10rem;
+    padding-right: 10rem;
+    border: 3px solid;
+}
+
+.node-scroll {
+    scroll-snap-align: center;
+    position: relative;
+}
+
+.tl-container {
+    width: 100%;
+    height: 30rem;
+    overflow-x: hidden;
+    background-color: lightslategray;
+    scroll-snap-type: x;
+    scroll-behavior: smooth;
+    
+}

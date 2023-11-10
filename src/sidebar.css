@@ -1,17 +1,15 @@
-/* Position and sizing of burger button */
-
 
 .bm-burger-button {
     position: fixed;
     width: 36px;
     height: 30px;
-    left: 36px;
-    top: 36px;
+    left: 15px;
+    top: 15px;
   }
   
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
-    background: #373a47;
+    background: #16697A;
   }
   
   /* Color/shape of burger icon bars on hover*/
@@ -36,17 +34,19 @@
   */
   .bm-menu-wrap {
     position: fixed;
-    height: 100%;
   }
   
   /* General sidebar styles */
   .bm-menu {
-    background: #FFFFFF;
+    position: absolute;
+    top: 0px;
+    background: #0C404F;
     text-align: center;
     display: flex;
     flex-direction: column; /* Stack items vertically */
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    height: 100%;
   }
   
   /* Morph shape necessary with bubble or elastic */
@@ -62,7 +62,7 @@
 
   /* Individual item */
   .bm-item {
-    flex: 1; /* Distribute equal space to each item */
+    
     display: flex; /* Use flex layout for item contents */
     flex-direction: column;
     align-items: center;
@@ -75,7 +75,6 @@
     font-weight: bold;
     border: 1px solid #FFFFFF; /* Add a border to create a box effect */
     background-color: #D9D9D9;
-    margin-top: 300px; /* Add margin for spacing between items */
     margin: 40px;
     padding: 20px 60px; /* Add padding for inner content spacing */
     border-radius: 10px;
@@ -91,8 +90,8 @@
   .sidebar-title {
     text-align: center;
     /*background-color: #333;*/
-    color: #000000;
-    background-color: #FFFFFF;
+    color: #4692A2;
+    background-color: #0C404F;
     padding: 3px;
     font-size: 40px;
     font-weight: bold;

@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import React from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,6 +10,9 @@ import SearchPage from './searchpage'
 import TimelineDisplay from './timeline';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Info from './moreinfo';
+import './moreinfo.css'
+import utdlogo from './utdlogo.png';
 
 function App() {
   return (
@@ -47,7 +50,18 @@ const Timeline = () => (
 
 const About = () => (
   <div className='about'>
-    <SearchPage/>
+    <Info
+            universityName="The University of Texas at Dallas"
+            location="Richardson, Texas"
+            logoSrc={utdlogo}
+            gpaRequirement="3.5"
+            meanMcatScore="5200"
+            acceptanceRate="20%"
+            applicationFee="100$"
+            amcasAccepted="Yes"
+            aacomas="No"
+            courseworkDescription="blah blah blah blah"
+        />
   </div>
 );
 

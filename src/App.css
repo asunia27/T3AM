@@ -1,10 +1,18 @@
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.App > h1 {
+  color: #4692A2;
+  font-size: 60px;
+  font-weight: 600;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -15,13 +23,12 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #4692A2;
 }
 
 .App-link {
@@ -75,6 +82,7 @@ nav ul li a {
 
 h1 {
   margin-bottom: 20px;
+  color: #4692A2;
 }
 
 p {
@@ -84,4 +92,9 @@ p {
 .contact {
   padding-top: 2rem;
   width: 60%;
+}
+
+.home {
+  width: 100%;
+  margin-top: 4rem;
 }
