@@ -6,6 +6,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import {Routes, Route} from 'react-router-dom';
 import Sidebar from './sidebar';
 import Inquiry from './inquiry';
+import TimelineDisplay from './timeline';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -33,7 +34,7 @@ const Main = () => (
 
 const Home = () => (
   <div className='home'>
-    <h1>TIMELINE PLACEHOLDER</h1>
+    <TimelineDisplay/>
   </div>
 );
 
