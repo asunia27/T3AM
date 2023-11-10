@@ -6,6 +6,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import {Routes, Route} from 'react-router-dom';
 import Sidebar from './sidebar';
 import Inquiry from './inquiry';
+import SearchPage from './searchpage'
 import TimelineDisplay from './timeline';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -46,7 +47,7 @@ const Timeline = () => (
 
 const About = () => (
   <div className='about'>
-    <h1>INFORMATION PLACEHOLDER</h1>
+    <SearchPage/>
   </div>
 );
 
