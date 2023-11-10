@@ -1,5 +1,5 @@
 import React from 'react';
-import { toast } from 'react-toastify';
+import Notif from './notif';
 import DropdownSelect from './general';
 
 export default function Inquiry() {
@@ -19,12 +19,6 @@ export default function Inquiry() {
         'Other'
     ];
 
-    const Notif = () => {
-        toast.success("Inquiry sent successfully!", {
-            autoClose: 2000
-        })
-    }
-
     return(
         <div>
             <div>
@@ -43,7 +37,9 @@ export default function Inquiry() {
                 <textarea name='inquiryInput' className='form-control' placeholder='Inquiry begins here...' style={{minHeight: '15rem'}}></textarea>
             </div>
             <div className='mb-5'>
-                <button onClick={Notif} className='btn btn-primary btn-lg px-5' style={{backgroundColor: '#2b85a1'}}>Send</button>
+                <button onClick={
+                    () => Notif('Inquiry sent successfully!', 'success', '/')
+                } className='btn btn-primary btn-lg px-5' style={{backgroundColor: '#2b85a1'}}>Send</button>
             </div>  
         </div>
     );
