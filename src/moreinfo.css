@@ -5,7 +5,7 @@ body {
     position: absolute;
     left: 0;
     top: 0px;
-    width: 250px; /* Adjust the width as needed */
+    width: 250px; 
     height: 890px;
     background-color: #0C404F;
     padding: 20px;
@@ -35,7 +35,7 @@ body {
     position: absolute;
     top: 200px;
     left: 550px;
-    width: 600px; /* Adjust the width as needed */
+    width: 600px; 
     height: 280px;
     background-color: #DAE0E3;
     border-right: 1px solid #ccc;
@@ -72,25 +72,28 @@ body {
   }
 
   .title > h1 {
-    position: relative;
+    position: absolute;
     font-weight: 700px;
     font-size: 40px;
     text-align: left;
     color: #DAE0E3;
-    right: 120px;
+    left: 260px;
+    top: 100px;
 
   }
   .title > h2 {
+    position: absolute;
     font-weight: 700px;
     font-size: 20px;
     color: #4692A2;
-    position: relative;
-    right: 320px;
+
+    left: 260px;
+    top: 150px;
   
   }
   .utdlogo img {
-    position: absolute; /* Use absolute positioning for the logo */
-    left: 260px; /* Adjust the left value as needed to align with .reqs */
+    position: absolute; 
+    left: 260px; 
     top: 200px;
     width: 280px;
     height: 280px;
