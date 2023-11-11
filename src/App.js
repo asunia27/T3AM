@@ -34,6 +34,7 @@ const Main = () => (
     <Route path='/timeline' Component={Timeline}></Route>
     <Route path='/about' Component={About}></Route>
     <Route path='/contact' Component={Contact}></Route>
+    <Route path='/moreinfo/:id' element={<Info />} />
   </Routes>
 );
 
@@ -52,18 +53,7 @@ const Timeline = () => (
 
 const About = () => (
   <div className='about'>
-    <Info
-            universityName="The University of Texas at Dallas"
-            location="Richardson, Texas"
-            logoSrc={utdlogo}
-            gpaRequirement="3.5"
-            meanMcatScore="5200"
-            acceptanceRate="20%"
-            applicationFee="100$"
-            amcasAccepted="Yes"
-            aacomas="No"
-            courseworkDescription="blah blah blah blah"
-        />
+    <SearchPage></SearchPage>
   </div>
 );
 

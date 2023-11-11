@@ -1,17 +1,20 @@
 import React from 'react'
 import {useState} from 'react'
+import './search.css'
+import { Link } from 'react-router-dom'
 
 const SearchPage = () => {
 
     const[searchInput, setSearchInput] = useState("");
-
+    const [filteredSchools, setFilteredSchools] = useState([]);
+    
     const schools = [
-        {name: "UT Southwestern Medical Center", city: "Dallas", state: "Texas"},
-        {name: "Texas A&M School of Medicine", city: "College Station", state: "Texas"},
-        {name: "Baylor College of Medicine", city: "Houston", state: "Texas"},
-        {name: "Texas Tech University Health Sciences Center", city: "Lubbock", state: "Texas"},
-        {name: "UNT Health Science Center", city: "Denton", state: "Texas"},
-        {name: "UT Health San Antonio Long Campus", city: "San Antonio", state: "Texas"}
+        { id: 0, name: "UT Southwestern Medical Center", city: "Dallas", state: "Texas" },
+        { id: 1, name: "Texas A&M School of Medicine", city: "College Station", state: "Texas" },
+        { id: 2, name: "Baylor College of Medicine", city: "Houston", state: "Texas" },
+        { id: 3, name: "Texas Tech University Health Sciences Center", city: "Lubbock", state: "Texas" },
+        { id: 4, name: "UNT Health Science Center", city: "Denton", state: "Texas" },
+        { id: 5, name: "UT Health San Antonio Long Campus", city: "San Antonio", state: "Texas" }
     ];
 
     const handleChange = (e) => {
@@ -19,11 +22,12 @@ const SearchPage = () => {
         setSearchInput(e.target.value);
     };
       
-    if (searchInput.length > 0) {
-        schools.filter((school) => {
-            return school.name.match(searchInput);
+    const handleSearch = () => {
+        const filtered = schools.filter((school) => {
+            return school.name.toLowerCase().includes(searchInput.toLowerCase());
         });
-    }
+        setFilteredSchools(filtered);
+    };
 
     return (
         <div className="Search">
@@ -32,23 +36,23 @@ const SearchPage = () => {
                 placeholder="Search here"
                 onChange={handleChange}
                 value={searchInput}
+                onKeyPress={(e) => {
+                    if (e.key === 'Enter') {
+                        handleSearch();
+                    }
+                }}
             />
 
-            {schools.filter(school =>{
-                if (searchInput === '') {
-                    return school;
-                } else if (school.name.toLowerCase().includes(searchInput.toLowerCase())) {
-                    return school;
-                }
-            }).map( (school, index) => {
-                <div key="index">
+            {filteredSchools.map((school, index) => (
+                <div key={index} className="result">
+                    <Link to={`/moreinfo/${school.id}`} key={school.id} className='result'>
                     <h2>{school.name}</h2>
-                    <p>{school.city + ", " + school.state}</p>
+                    <p>{school.city + ', ' + school.state}</p>
+                    </Link>
                 </div>
-            })}
+            ))}
         </div>
-
     );
-}
+};
 
 export default SearchPage
