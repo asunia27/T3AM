@@ -1,0 +1,35 @@
+.Search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.result {
+    background-color: #DAE0E3;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+}
+
+.result h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #16697A;
+}
+
+.result p {
+    text-align: center;
+    font-size: 14px;
+    color: #16697A;
+}
+
+.result a{
+    text-decoration: none;
+    border: none;
+    width: auto;
+}
