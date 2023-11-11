@@ -8,7 +8,7 @@ export default function Notif(message, type, path) {
             //change page to path
             //<Navigate replace to path/>,
             //success message
-            toast.success(path, {
+            toast.success(message, {
                 autoClose: 2000
             })
         );
