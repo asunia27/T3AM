@@ -9,7 +9,7 @@ import Inquiry from './inquiry';
 import SearchPage from './searchpage'
 import TimelineDisplay from './timeline';
 import {ToastContainer} from 'react-toastify';
-import NodeMod from './node-mod';
+import NodeEdit from './node-mod';
 import 'react-toastify/dist/ReactToastify.css';
 import Info from './moreinfo';
 import './moreinfo.css'
@@ -47,7 +47,7 @@ const Home = () => (
 const Timeline = () => (
   <div className='timeline'>
     <h1>EDIT TIMELINE PLACEHOLDER</h1>
-    <NodeMod/>
+    <NodeEdit/>
   </div>
 );
 
