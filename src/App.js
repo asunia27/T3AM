@@ -13,7 +13,6 @@ import NodeEdit from './node-mod';
 import 'react-toastify/dist/ReactToastify.css';
 import Info from './moreinfo';
 import './moreinfo.css'
-import utdlogo from './utdlogo.png';
 
 function App() {
   return (
