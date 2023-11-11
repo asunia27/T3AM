@@ -16,7 +16,7 @@ const testNodes = [{
     semName: 'SPRING 2024'
 }, {
     id: 4,
-    semName: 'SUMMER 2024'
+    semName: 'MAYMESTER 2024'
 }, {
     id: 5,
     semName: 'FALL 2024'
@@ -27,17 +27,61 @@ function Node({semester, nodeId}) {
 
     return (
         <>
-            <div className='node-container node-scroll' id={'node-'+nodeId}>
-                <div className='card mb-5 rounded-pill'>
-                    <div className='card-body'>
+            <div className='node-scroll' id={'node-'+nodeId}>
+                <div className='card mb-5 rounded-pill medium-blue-bg' style={{marginLeft: '8rem', marginRight: '8rem'}}>
+                    <div className='card-body primary-text'>
                         {semester}
                     </div>
                 </div>
-                <FontAwesomeIcon icon={faCircleDot} className='node-icon' />
-
+                <div className='d-flex align-items-center'>
+                    <div className='tl-line'></div>
+                    <FontAwesomeIcon icon={faCircleDot} className='node-icon light-blue' />
+                    <div className='tl-line'></div>
+                </div>
             </div>
         </>
     );
+}
+
+function EndNode({text, nodeId}) {
+    if (text=='START')
+    {
+        return (
+            <>
+                <div className='node-scroll' id={'node-'+nodeId}>
+                    <div className='card mb-5 rounded-pill medium-blue-bg' style={{marginLeft: '8rem', marginRight: '8rem'}}>
+                        <div className='card-body primary-text'>
+                            {text}
+                        </div>
+                    </div>
+                    <div className='d-flex align-items-center justify-content-end'>
+                        <div style={{paddingLeft: '10rem'}}></div>
+                        <FontAwesomeIcon icon={faCircleDot} className='node-icon medium-blue' />
+                        <div className='tl-line'></div>
+                    </div>
+                </div>
+            </>
+        );
+    }
+    else
+    {
+        return (
+            <>
+                <div className='node-scroll' id={'node-'+nodeId}>
+                    <div className='card mb-5 rounded-pill medium-blue-bg' style={{marginLeft: '8rem', marginRight: '8rem'}}>
+                        <div className='card-body primary-text'>
+                            {text}
+                        </div>
+                    </div>
+                    <div className='d-flex align-items-center justify-content-start'>
+                        <div className='tl-line'></div>
+                        <FontAwesomeIcon icon={faCircleDot} className='node-icon medium-blue' />
+                        <div style={{paddingRight: '10rem'}}></div>
+                    </div>
+                </div>
+            </>
+        );
+    }
 }
 
 export default function TimelineDisplay() {
@@ -85,22 +129,22 @@ export default function TimelineDisplay() {
 
     return (
         <>
-            <div className='d-flex justify-content-center'>
-                <FontAwesomeIcon icon={faChevronCircleLeft} className='arrow-btn' style={{marginRight: '10rem'}} onClick={scrollPrev}/>
-                <FontAwesomeIcon icon={faChevronCircleRight} className='arrow-btn' style={{marginLeft: '10rem'}} onClick={scrollNext}/>
+            <div className='' style={{position: 'absolute', marginTop: '10rem'}}>
+                <FontAwesomeIcon icon={faChevronCircleLeft} className='arrow-btn light-blue' style={{marginRight: '10rem'}} onClick={scrollPrev}/>
+                <FontAwesomeIcon icon={faChevronCircleRight} className='arrow-btn light-blue' style={{marginLeft: '10rem'}} onClick={scrollNext}/>
             </div>
-            <div className='d-flex align-items-center tl-container'>
-                <div className='node-container'></div> {/* empty div to pad the beginning of the timeline */}
-                <div className='node-container'></div> {/* empty div to pad the beginning of the timeline */}
-                <div className='node-container'></div> {/* empty div to pad the beginning of the timeline */}
-                <Node semester={'START'} nodeId={0}/>
+            <div className='d-flex align-items-center tl-container' style={{zIndex: -1000}}>
+                <div className='padding-container'></div> {/* empty div to pad the beginning of the timeline */}
+                <div className='padding-container'></div> {/* empty div to pad the beginning of the timeline */}
+                <div className='padding-container'></div> {/* empty div to pad the beginning of the timeline */}
+                <EndNode text={'START'} nodeId={0}/>
                 {testNodes.map((sem) => (
                     <Node key={sem.id} semester={sem.semName} nodeId={sem.id}/>
                 ))}
-                <Node semester={'FINISH'} nodeId={testNodes.length + 1}/>
-                <div className='node-container'></div> {/* empty div to pad the end of the timeline */}
-                <div className='node-container'></div> {/* empty div to pad the end of the timeline */}
-                <div className='node-container'></div> {/* empty div to pad the end of the timeline */}
+                <EndNode text={'FINISH'} nodeId={testNodes.length + 1}/>
+                <div className='padding-container'></div> {/* empty div to pad the end of the timeline */}
+                <div className='padding-container'></div> {/* empty div to pad the end of the timeline */}
+                <div className='padding-container'></div> {/* empty div to pad the end of the timeline */}
             </div>
         </>
     );

@@ -6,10 +6,14 @@
     height: 3rem;
 }
 
-.node-container {
+.arrow-btn:hover {
+    color: #97C0C8;
+    cursor: pointer;
+}
+
+.padding-container {
     padding-left: 10rem;
     padding-right: 10rem;
-    border: 3px solid;
 }
 
 .node-scroll {
@@ -21,8 +25,31 @@
     width: 100%;
     height: 30rem;
     overflow-x: hidden;
-    background-color: lightslategray;
     scroll-snap-type: x;
     scroll-behavior: smooth;
     
+}
+
+.tl-line {
+    height: 0.5rem;
+    width: 10rem;
+    background-color: #4692A2;
+}
+
+.light-blue {
+    color: #4692A2;
+}
+
+.medium-blue-bg {
+    background-color: #0F3845;
+}
+
+.medium-blue {
+    color: #0F3845;
+}
+
+.primary-text {
+    color: #97C0C8;
+    font-size: 1.25rem;
+    font-weight: 600;
 }
