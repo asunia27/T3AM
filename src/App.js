@@ -30,7 +30,7 @@ function App() {
 
 const Main = () => (
   <Routes>
-    <Route path='/T3AM' Component={Home}></Route>
+    <Route path='/T3AM/' Component={Home}></Route>
     <Route path='/T3AM/timeline' Component={Timeline}></Route>
     <Route path='/T3AM/about' Component={About}></Route>
     <Route path='/T3AM/contact' Component={Contact}></Route>
