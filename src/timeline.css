@@ -1,5 +1,11 @@
 .node-icon {
     height: 10rem;
+    color: #4692A2;
+}
+
+.main-nodes:hover {
+    color: #97C0C8;
+    cursor: pointer;
 }
 
 .arrow-btn {
@@ -40,6 +46,10 @@
     color: #4692A2;
 }
 
+.light-blue-bg {
+    background-color: #4692A2;
+}
+
 .medium-blue-bg {
     background-color: #0F3845;
 }
@@ -48,8 +58,53 @@
     color: #0F3845;
 }
 
+.dark-blue-bg {
+    background-color: #032731;
+}
+
 .primary-text {
     color: #97C0C8;
     font-size: 1.25rem;
     font-weight: 600;
+}
+
+.modal-text {
+    color: #97C0C8;
+}
+
+.task-container {
+    height: fit-content;
+    width: 100%;
+    background-color: #0F3845;
+    text-align: left;
+    word-wrap: break-word;
+    border-radius: 20px;
+}
+
+.border-style {
+    border-color: #032731; 
+}
+
+.outer-border {
+    border-color: #4692A2 !important;
+}
+
+.btn-style {
+    background-color: #4692A2;
+    color: #0F3845;
+    font-weight: 500;
+}
+
+.btn-style:hover {
+    background-color: #97C0C8;
+    color: #0F3845;
+}
+
+.x-btn {
+    color: #97C0C8;
+    height: 1.5rem;
+}
+
+.x-btn:hover {
+    cursor: pointer;
 }

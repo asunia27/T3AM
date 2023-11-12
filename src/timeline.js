@@ -4,26 +4,69 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleDot } from '@fortawesome/free-solid-svg-icons';
 import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const testNodes = [{
     id: 1,
-    semName: 'FALL 2023'
+    semName: 'FALL 2023',
+    taskList: [
+        'Do something',
+        'Do some other thing',
+        "Some task that's really long for some reason and I'm just making stuff up to take up more space.",
+        "Testing overflow so this list should be really long yayyyyy",
+        "Some task 1",
+        "Some task 2",
+        "Some task 3",
+        "Some task 4",
+        "idgjslkjhbskdfjijnslfkhujdsriofnhskfjdglsekrfdhskldfjksjdfhkljglkshhdkljglhkfdjskldfjglksdjfdhkfjhskdljhskdlfjlkdfdslfh",
+        "idgjslkjhbskdfjijnslfkhujdsriofnhskfjdglsekrfdhskldfjksjdfhkljglkshhdkljglhkfdjskldfjglksdjfdhkfjhskdljhskdlfjlkdfdslfh",
+        "idgjslkjhbskdfjijnslfkhujdsriofnhskfjdglsekrfdhskldfjksjdfhkljglkshhdkljglhkfdjskldfjglksdjfdhkfjhskdljhskdlfjlkdfdslfh",
+        "idgjslkjhbskdfjijnslfkhujdsriofnhskfjdglsekrfdhskldfjksjdfhkljglkshhdkljglhkfdjskldfjglksdjfdhkfjhskdljhskdlfjlkdfdslfh"
+    ]
 }, {
     id: 2,
-    semName: 'WINTER 2023'
+    semName: 'WINTER 2023',
+    taskList: [
+        'Do something',
+        'Do some other thing',
+        "Some task that's really long for some reason and I'm just making stuff up to take up more space.",
+        "Testing overflow so this list should be really long yayyyyy",
+        "Some task 1",
+        "Some task 2",
+        "Some task 3",
+        "Some task 4"
+    ]
 }, {
     id: 3,
-    semName: 'SPRING 2024'
+    semName: 'SPRING 2024',
+    taskList: [
+        "Some task 1",
+        "Some task 2",
+        "Some task 3",
+        "Some task 4"
+    ]
 }, {
     id: 4,
-    semName: 'MAYMESTER 2024'
+    semName: 'MAYMESTER 2024',
+    taskList: [
+        "Some task 1",
+        "Some task 2",
+        "Some task 3",
+        "Some task 4"
+    ]
 }, {
     id: 5,
-    semName: 'FALL 2024'
+    semName: 'FALL 2024',
+    taskList: [
+        "Some task 1",
+        "Some task 2",
+        "Some task 3",
+        "Some task 4"
+    ]
 }
 ];
 
-function Node({semester, nodeId}) {
+function Node({semester, nodeId, onOpen}) {
 
     return (
         <>
@@ -35,7 +78,7 @@ function Node({semester, nodeId}) {
                 </div>
                 <div className='d-flex align-items-center'>
                     <div className='tl-line'></div>
-                    <FontAwesomeIcon icon={faCircleDot} className='node-icon light-blue' />
+                    <FontAwesomeIcon icon={faCircleDot} className='node-icon main-nodes' onClick={onOpen}/>
                     <div className='tl-line'></div>
                 </div>
             </div>
@@ -44,7 +87,7 @@ function Node({semester, nodeId}) {
 }
 
 function EndNode({text, nodeId}) {
-    if (text=='START')
+    if (text==='START')
     {
         return (
             <>
@@ -84,9 +127,39 @@ function EndNode({text, nodeId}) {
     }
 }
 
+function TaskBox({semester, tasks, isActive, onClose}) {
+    if (isActive) {
+    {console.log('opening modal')}
+    return (
+        <>
+            <div className="modal fade show" id="" tabIndex="-1" style={{display: 'block', zIndex: 2}}>
+                <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div className="modal-content dark-blue-bg border outer-border">
+                        <div className="modal-header border-style">
+                            <h1 className="modal-title fs-5 primary-text" id="">{semester}</h1>
+                            <FontAwesomeIcon icon={faXmark} onClick={onClose} className='x-btn'/>
+                        </div>
+                        <div className="modal-body">
+                            {tasks.map((t) => (
+                                <>
+                                    <div className='task-container p-2 px-3 my-3 modal-text'>{t}</div>
+                                </>
+                            ))}
+                        </div>
+                        <div className="modal-footer border-style">
+                            <button type="button" className="btn btn-secondary btn-style" onClick={onClose}>Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );}
+}
+
 export default function TimelineDisplay() {
 
-    const [currentNode, setCurrentNode] = useState(0)
+    const [currentNode, setCurrentNode] = useState(0);
+    const [activeIndex, setActiveIndex] = useState(-1);
 
     function scrollNext() {
         //console.log('(NEXT) pre update ' + currentNode)
@@ -129,18 +202,22 @@ export default function TimelineDisplay() {
 
     return (
         <>
-            <div className='' style={{position: 'absolute', marginTop: '10rem'}}>
+            <div className='' style={{position: 'absolute', marginTop: '10rem', zIndex: 1}}>
                 <FontAwesomeIcon icon={faChevronCircleLeft} className='arrow-btn light-blue' style={{marginRight: '10rem'}} onClick={scrollPrev}/>
                 <FontAwesomeIcon icon={faChevronCircleRight} className='arrow-btn light-blue' style={{marginLeft: '10rem'}} onClick={scrollNext}/>
             </div>
-            <div className='d-flex align-items-center tl-container' style={{zIndex: -1000}}>
+            <div className='d-flex align-items-center tl-container' style={{}}>
                 <div className='padding-container'></div> {/* empty div to pad the beginning of the timeline */}
                 <div className='padding-container'></div> {/* empty div to pad the beginning of the timeline */}
                 <div className='padding-container'></div> {/* empty div to pad the beginning of the timeline */}
                 <EndNode text={'START'} nodeId={0}/>
-                {testNodes.map((sem) => (
-                    <Node key={sem.id} semester={sem.semName} nodeId={sem.id}/>
-                ))}
+                {testNodes.map((sem, i) => {
+                    return [
+                    <>
+                        <Node key={sem.id} semester={sem.semName} nodeId={i+1} onOpen={() => setActiveIndex(i+1)}/>
+                        <TaskBox semester={sem.semName} tasks={sem.taskList} isActive={activeIndex === i+1} onClose={() => setActiveIndex(-1)}/>
+                    </>]
+                })}
                 <EndNode text={'FINISH'} nodeId={testNodes.length + 1}/>
                 <div className='padding-container'></div> {/* empty div to pad the end of the timeline */}
                 <div className='padding-container'></div> {/* empty div to pad the end of the timeline */}
