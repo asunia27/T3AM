@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/T3AM/static/css/main.ce6f5c30.css",
+    "main.js": "/T3AM/static/js/main.0c0ab14a.js",
+    "index.html": "/T3AM/index.html",
+    "main.ce6f5c30.css.map": "/T3AM/static/css/main.ce6f5c30.css.map",
+    "main.0c0ab14a.js.map": "/T3AM/static/js/main.0c0ab14a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ce6f5c30.css",
+    "static/js/main.0c0ab14a.js"
+  ]
+}
