@@ -13,7 +13,14 @@ const schoolDetails = {
         applicationFee: "$0",
         amcasAccepted: "No",
         aacomas: "No",
-        courseworkDescription: "Biology - 14 semester credit hours\nBiochemistry - 3 semester credit hours\nChemistry - 12 semester credit hours\nEnglish - 6 semester credit hours\nMathematics - 3 semester credit  hours\nPhysics - 8 semester credit hours",
+        courseworkDescription: [
+            "Biology - 14 semester credit hours", <br/>,
+            "Biochemistry - 3 semester credit hours", <br/>,
+            "Chemistry - 12 semester credit hours", <br/>,
+            "English - 6 semester credit hours", <br/>,
+            "Mathematics - 3 semester credit  hours", <br/>,
+            "Physics - 8 semester credit hours"
+        ],
     },
     2: {
         universityName: "Baylor College of Medicine",
@@ -25,7 +32,13 @@ const schoolDetails = {
         applicationFee: "$100",
         amcasAccepted: "No",
         aacomas: "No",
-        courseworkDescription: "Biology - 3-4 semester hours\nBiochemistry - 3-4 semester hours\nOrganic Chemistry - 6-8 semester hours\nHumanities\/Behavioral Sciences - 12 semester hours\nExpossitory Writing - 3-4 semester hours\nMathematics- 3-4 semester  hours (biostatics preferred)",
+        courseworkDescription: ["Biology - 3-4 semester hours", <br/>,
+            "Biochemistry - 3-4 semester hours", <br/>,
+            "Organic Chemistry - 6-8 semester hours", <br/>,
+            "Humanities/Behavioral Sciences - 12 semester hours", <br/>,
+            "Expository Writing - 3-4 semester hours", <br/>,
+            "Mathematics- 3-4 semester  hours (biostatics preferred)"
+        ],
     },
     3: {
         universityName: "Texas Tech University Health Sciences Center",
@@ -37,7 +50,19 @@ const schoolDetails = {
         applicationFee: "$75",
         amcasAccepted: "No",
         aacomas: "No",
-        courseworkDescription: "Sample coursework description goes here for Texas Tech University Health Sciences Center.",
+        courseworkDescription: [
+            "General Biology or Zoology - 6 hours", <br/>,
+            "Biology Labs - 2 hours" , <br/>,
+            "Upper Division Biology - 6 hours", <br/>,
+            "General Chemistry - 6 hours", <br/>,
+            "General Chemistry Labs - 2 hours", <br/>,
+            "Organic Chemistry - 6 hours", <br/>,
+            "Organic Chemistry Labs - 2 hours", <br/>,
+            "Physics - 6 hours", <br/>,
+            "Physics Labs - 2 hours", <br/>,
+            "English - 6 hours", <br/>,
+            "Statistics - 3 hours"
+        ],
     },
     4: {
         universityName: "UNT Health Science Center",
@@ -49,7 +74,18 @@ const schoolDetails = {
         applicationFee: "$0",
         amcasAccepted: "No",
         aacomas: "No",
-        courseworkDescription: "Sample coursework description goes here for UNT Health Science Center.",
+        courseworkDescription: [
+            "Biology - 12 hours", <br/>,
+            "Biology Labs - 2 hours", <br/>,
+            "Chemistry - 6 hours", <br/>,
+            "Chemistry Labs - 2 hours", <br/>,
+            "Organic Chemistry - 6 hours", <br/>,
+            "Organic Chemistry Labs - 2 hours", <br/>,
+            "Physics - 6 hours", <br/>,
+            "Physics Labs - 2 hours", <br/>,
+            "English - 6 hours", <br/>,
+            "Statistics - 3 hours"
+        ],
     },
     5: {
         universityName: "UT Health San Antonio Long Campus",
@@ -61,7 +97,18 @@ const schoolDetails = {
         applicationFee: "$0",
         amcasAccepted: "No",
         aacomas: "No",
-        courseworkDescription: "Sample coursework description goes here for UT Health San Antonio Long Campus.",
+        courseworkDescription: [
+            "Biology - 12 hours", <br/>,
+            "Biology Labs - 2 hours", <br/>,
+            "Chemistry - 6 hours", <br/>,
+            "Chemistry Labs - 2 hours", <br/>,
+            "Organic Chemistry - 6 hours", <br/>,
+            "Organic Chemistry Labs - 2 hours", <br/>,
+            "Physics - 6 hours", <br/>,
+            "Physics Labs - 2 hours", <br/>,
+            "Biochemistry - 3 hours", <br/>,
+            "Statistics - 3 hours"
+        ]
     },
 };
 
