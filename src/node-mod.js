@@ -30,7 +30,7 @@ export default function NodeEdit() {
 
     function handleBack(e) {
         e.preventDefault()
-        navigate('/');
+        navigate('/T3AM');
     }
 
     const [nodeList, setNodeList] = useState([]);
