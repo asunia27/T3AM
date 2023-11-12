@@ -32,6 +32,7 @@ const SearchPage = () => {
     return (
         <div className="Search">
             <input
+                className='form-control mb-3'
                 type="text"
                 placeholder="Search here"
                 onChange={handleChange}

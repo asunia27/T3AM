@@ -2,6 +2,12 @@ import React, {useState} from 'react';
 import './node-mod.css'
 import DropdownSelect from './general';
 import Notif from './notif';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router';
 
 //also need to change colors lol
 //in general, going to move this whole thing into a sidebar / popup
@@ -20,6 +26,13 @@ import Notif from './notif';
 //then make add button / edit button separate allowing new node or existing node ig
 
 export default function NodeEdit() {
+    const navigate = useNavigate();
+
+    function handleBack(e) {
+        e.preventDefault()
+        navigate('/');
+    }
+
     const [nodeList, setNodeList] = useState([]);
     const [node, setNode] = useState({
         id: 0,
@@ -98,7 +111,7 @@ export default function NodeEdit() {
             for(let i=0; i<nodeList.length; i++){
                 if(sem === nodeList[i].semester && yr === nodeList[i].year){
                     unique = false;
-                    Notif('Semester + Year combo in not unique!', 'error', '/');
+                    Notif('Semester + Year combo is not unique!', 'error', '/');
                     break;
                 }
             }
@@ -162,7 +175,7 @@ export default function NodeEdit() {
         ];
     
         return(
-            <div className='nodeMod-menu'>
+            <div className='nodeMod-menu text-color'>
                 {/* 
                 -if node is not null, set taskList to node's taskList
                 -for the dropdown, default should only be set if creating new (maybe have a status var)
@@ -171,8 +184,8 @@ export default function NodeEdit() {
                 <div>
                     <h3>{title}</h3>
                 </div>
-                <div className='d-flex justify-content-between row mb-5'>
-                        <div className='col-5'>
+                <div className='d-flex flex-column mb-2'>
+                        <div className='my-2'>
                             {/* if node is not null, placeholder should be the semester in the node 
                             
                             onChange={ (e) => {setSem(e.target.value); Notif('changed!', 'success', '/')}}
@@ -183,7 +196,7 @@ export default function NodeEdit() {
                             placeholder={'Semester*'} options={semesterOp}/>
                             {/* need to save in semester var to be used in node */}
                         </div>
-                        <div className='col-5'>
+                        <div className='my-2'>
                             {/* if node is not null, placeholder should be the year in the node */}
                             <DropdownSelect fnc={setYr} 
                             placeholder={'Year*'} options={yearOp}/>
@@ -193,37 +206,40 @@ export default function NodeEdit() {
                 <div>
                     <h3>Tasks</h3>
                 </div>
-                <div>
-                    <div className="taskList-container">
-                        {taskList.length > 0 && 
-                        taskList.map((task, index) => 
-                                //need to make everything here look good
-                                <div key={index}>
-                                    {task}
-                                    {" "}
-                                    <input value = {task} type="checkbox" />
-                                    {" "}
-                                    <button onClick={ () => removeTask(index)}>x</button>
-                                </div>
-                            )}
-                    </div>
-                </div>
                 {/* displays all of the tasks */}
-                <div className='mb-5'>
+                <div className='mb-2 d-flex align-items-center'>
                     <input
+                        className='form-control me-2'
                         placeholder = "Type..."
                         type = "text"
                         value = {task}
                         onChange={ (e) => setTask(e.target.value)}
                     />{" "}
-                    <button onClick={addTask}>+</button>
+                    <FontAwesomeIcon className='plus-btn' icon={faCirclePlus} onClick={addTask}/>
+                </div>
+                <div>
+                    <div className="taskList-container pe-2 mb-4">
+                        {taskList.length > 0 && 
+                        taskList.map((task, index) => 
+                                //need to make everything here look good
+                                <div key={index} className='task-style d-flex p-2 my-2'>
+                                    <div className='col-11'>
+                                        {task}
+                                    </div>
+                                    {/*<input value = {task} type="checkbox" />*/}
+                                    <div className='col-1'>
+                                        <FontAwesomeIcon className='task-x' icon={faXmark} onClick={() => removeTask(index)}/>
+                                    </div>
+                                </div>
+                            )}
+                    </div>
                 </div>
                 <div className='mb-5'>
                     {/*on click, needs to create / save node info - store in node and then push to nodeList*/}
-                    <button onClick={ () => saveNode()}>save</button>
+                    <button className='btn btn-primary btn-color mx-3' onClick={ () => saveNode()}>save</button>
                     {" "}
                     {/*on click, needs to exit and discard changes - maybe don't even need*/}
-                    <button onClick={ () => clearNode()}>cancel</button>
+                    <button className='btn btn-primary btn-color mx-3' onClick={ () => clearNode()}>cancel</button>
                 </div>
             </div>
         );
@@ -231,7 +247,7 @@ export default function NodeEdit() {
     
     return(
         <div className="wrapper">
-            <div className="nodeEdit">
+            <div className="nodeEdit mx-5 text-color">
                 {/* displays all of the nodes (maybe display in order or id instead of index later) */}
                 <div>
                     <h3>Node List</h3>
@@ -240,21 +256,26 @@ export default function NodeEdit() {
                     {nodeList.length > 0 && 
                     nodeList.map((node, index) => 
                             //need to make everything here look good
-                            <div key={index}>
-                                {node.semester + " " + node.year}
-                                {" "}
-                                <button onClick={ () => editNode(node)}>[edit icon here]</button>
-                                {" "}
-                                <button onClick={ () => removeNode(index)}>x</button>
+                            <div key={index} className='task-style d-flex p-2 my-2 align-items-center'>
+                                <div className='col-8 ms-2'>
+                                    {node.semester + " " + node.year}
+                                </div>
+                                <div className='col-1 mx-3'>
+                                    <FontAwesomeIcon className='icon-btn' icon={faPen} onClick={ () => editNode(node)} />
+                                </div>
+                                <div className='col-1'>
+                                    <FontAwesomeIcon className='icon-btn' icon={faTrash} onClick={ () => removeNode(index)} />
+                                </div>
                             </div>
                         )}
                 </div>
                 <div className='mb-5'>
-                    {"(add a node) "}
-                    <button onClick= { () => addNode() }>+</button>
+                    {/*{"(add a node) "}
+                    <button onClick= { () => addNode() }>+</button>*/}
+                    <button className='btn btn-primary btn-color mx-3' onClick={handleBack}>Done</button>
                 </div>
             </div>
-            <div className="nodeMod">
+            <div className="nodeMod mx-5">
                 {NodeMod(null, 1)}
             </div>
         </div>

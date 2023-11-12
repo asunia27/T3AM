@@ -100,3 +100,9 @@ p {
   display: flex;
   justify-content: center;
 }
+
+.timeline {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}

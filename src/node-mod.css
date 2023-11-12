@@ -1,24 +1,89 @@
 .wrapper{
     display: flex;
-    justify-content: space-between;
-    width: 1920px;
+    justify-content: center;
+    width: 100%;
+    height: 80%;
 }
 
 .nodeEdit{
-    width: 600px;
+    width: 20rem;
     background-color: #DAE0E3;
     padding: 15px;
+    border-radius: 20px;
     
 }
 
 .nodeMod {
     position: sticky;
-    width: 600px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    width: 20rem;
     background-color: #DAE0E3;
     padding: 15px;
-    
+    border-radius: 20px;
 }
 
 body {
     color: '#4692A2'
+}
+
+.plus-btn {
+    height: 1.5rem;
+    color:#0F3845;
+}
+
+.plus-btn:hover {
+    color:#4692A2;
+    cursor: pointer;
+}
+
+.icon-btn {
+    color:#0F3845;
+}
+
+.icon-btn:hover {
+    color:#4692A2;
+    cursor: pointer;
+}
+
+.task-style {
+    height: fit-content;
+    width: 100%;
+    background-color: white;
+    text-align: left;
+    word-wrap: break-word;
+    border-radius: 20px;
+}
+
+.taskList-container {
+    height: 12rem;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.task-x {
+    height: 1rem;
+    margin-left: 0.5rem;
+    color: #0F3845;
+}
+
+.task-x:hover {
+    color: #4692A2;
+    cursor: pointer;
+}
+
+.btn-color {
+    background-color: #4692A2;
+    border-color: #4692A2;
+}
+
+.btn-color:hover {
+    background-color: #97C0C8;
+    border-color: #97C0C8;
+    color: #0F3845;
+}
+
+.text-color {
+    color:#0F3845;
 }
