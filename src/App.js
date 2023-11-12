@@ -45,7 +45,6 @@ const Home = () => (
 
 const Timeline = () => (
   <div className='timeline'>
-    <h1>EDIT TIMELINE PLACEHOLDER</h1>
     <NodeEdit/>
   </div>
 );
