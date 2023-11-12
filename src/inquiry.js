@@ -27,10 +27,10 @@ export default function Inquiry() {
             </div>
                 <div className='d-flex justify-content-between row mb-5'>
                 <div className='col-5'>
-                    <DropdownSelect placeholder={'Field Type'} options={field}/>
+                    <DropdownSelect fnc={'-'} placeholder={'Field Type'} options={field}/>
                 </div>
                 <div className='col-5'>
-                    <DropdownSelect placeholder={'Inquiry Type'} options={topic}/>
+                    <DropdownSelect fnc={'-'} placeholder={'Inquiry Type'} options={topic}/>
                 </div>
             </div>
             <div className='mb-5'>

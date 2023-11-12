@@ -9,11 +9,11 @@ import Notif from './notif';
 //node needs to be able to be saved
 
 //CURRENT ISSUES
-//-hard coded values for sem / yr bc cant grab from dropdown
 //-saves duplicates
-//-can't actually edit
+//-so can't truly edit
+//-dropdown doesn't reset
+
 //-redundant add node button
-//-doesn't autorender in new node items
 //-no confirmation when deleting nodes
 
 //maybe move state variables + task functions to its own const?
@@ -30,8 +30,8 @@ export default function NodeEdit() {
 
     const [taskList, setTaskList] = useState([]);
     const [task, setTask] = useState("");
-    const [sem, setSem] = useState("Fall");
-    const [yr, setYr] = useState(0);
+    const [sem, setSem] = useState("");
+    const [yr, setYr] = useState("");
     
     const addNode = () => {
         //nodeMod with null node (empty)
@@ -78,27 +78,43 @@ export default function NodeEdit() {
         const saveNode = () => {
             /*setSem("Spring");
             console.log(sem);
-            setYr(2024);
+            setYr(2024);*/
 
             //check that valid input for sem / yr
+            let valid = true;
             if(!semesterOp.includes(sem) || !yearOp.includes(yr)){
                 if(!semesterOp.includes(sem)){
                     Notif('Semester field is not filled in!', 'error', '/');
                 }
                 if(!yearOp.includes(yr)){
                     Notif('Year field is not filled in!', 'error', '/');
+                    console.log(yr);
                 }
+                valid = false;
             }
 
             //check that semester + year combo is unique
+            let unique = true;
+            for(let i=0; i<nodeList.length; i++){
+                if(sem === nodeList[i].semester && yr === nodeList[i].year){
+                    unique = false;
+                    Notif('Semester + Year combo in not unique!', 'error', '/');
+                    break;
+                }
+            }
 
-            else{*/
-                //if node is not null, remove afterwards so no duplicates
+            if(valid && (unique || node !== null)){
+                //if node is not null, remove old so no duplicates
+                if(node !== null){
+                    setSem(node.semester);
+                    setYr(node.year);
 
-                
+                    let holdArr = nodeList.filter((node, i) => i !== id2);
+                    setNodeList(holdArr);
+                }
 
                 //set the node to the parameters
-                let newNode = { id: nodeList.length+1, semester: "Spring", year: 2024, tasks: taskList };
+                let newNode = { id: id2, semester: sem, year: yr, tasks: taskList };
                 /*setNode({
                     id: id2,
                     semester: 'Spring',
@@ -121,7 +137,7 @@ export default function NodeEdit() {
                 });*/
 
                 //close the menu (hopefully would get replace semester / year to placeholder idk)
-            //}
+            }
         }
 
         const clearNode = () => {
@@ -138,11 +154,11 @@ export default function NodeEdit() {
         ];
         
         const yearOp = [
-            2023,
-            2024,
-            2025,
-            2026,
-            2027
+            '2023',
+            '2024',
+            '2025',
+            '2026',
+            '2027'
         ];
     
         return(
@@ -163,13 +179,13 @@ export default function NodeEdit() {
                             onChange={ (e) => setYear(e.target.value)} 
 
                             */}
-                            <DropdownSelect  
+                            <DropdownSelect fnc={setSem}
                             placeholder={'Semester*'} options={semesterOp}/>
                             {/* need to save in semester var to be used in node */}
                         </div>
                         <div className='col-5'>
                             {/* if node is not null, placeholder should be the year in the node */}
-                            <DropdownSelect 
+                            <DropdownSelect fnc={setYr} 
                             placeholder={'Year*'} options={yearOp}/>
                             {/* need to save in year var to be used in node */}
                         </div>
@@ -239,7 +255,7 @@ export default function NodeEdit() {
                 </div>
             </div>
             <div className="nodeMod">
-                {NodeMod(null, 0)}
+                {NodeMod(null, 1)}
             </div>
         </div>
     );
