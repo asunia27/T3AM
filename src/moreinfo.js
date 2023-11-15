@@ -125,7 +125,7 @@ const Info = () => {
         return (
             <div>
                 <h1>School Not Found</h1>
-                <NavLink to='/about' className='bm-link'>Back To Search</NavLink>
+                <NavLink to='/T3AM/about' className='bm-link'>Back To Search</NavLink>
             </div>
         );
     }
@@ -141,7 +141,7 @@ const Info = () => {
                     onChange={handleNotesChange}
                 />
                 <div className='backarea'>
-                    <NavLink to='/about' className='bm-link'>Back To Search</NavLink>
+                    <NavLink to='/T3AM/about' className='bm-link'>Back To Search</NavLink>
                 </div>
             </div>
             <div className='title'>
