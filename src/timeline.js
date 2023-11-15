@@ -10,58 +10,58 @@ const testNodes = [{
     id: 1,
     semName: 'FALL 2023',
     taskList: [
-        'Do something',
-        'Do some other thing',
-        "Some task that's really long for some reason and I'm just making stuff up to take up more space.",
-        "Testing overflow so this list should be really long yayyyyy",
-        "Some task 1",
-        "Some task 2",
-        "Some task 3",
-        "Some task 4",
-        "idgjslkjhbskdfjijnslfkhujdsriofnhskfjdglsekrfdhskldfjksjdfhkljglkshhdkljglhkfdjskldfjglksdjfdhkfjhskdljhskdlfjlkdfdslfh",
-        "idgjslkjhbskdfjijnslfkhujdsriofnhskfjdglsekrfdhskldfjksjdfhkljglkshhdkljglhkfdjskldfjglksdjfdhkfjhskdljhskdlfjlkdfdslfh",
-        "idgjslkjhbskdfjijnslfkhujdsriofnhskfjdglsekrfdhskldfjksjdfhkljglkshhdkljglhkfdjskldfjglksdjfdhkfjhskdljhskdlfjlkdfdslfh",
-        "idgjslkjhbskdfjijnslfkhujdsriofnhskfjdglsekrfdhskldfjksjdfhkljglkshhdkljglhkfdjskldfjglksdjfdhkfjhskdljhskdlfjlkdfdslfh"
+        'Make some friends from classes',
+        'Talk with at least 1 professor',
+        "Look into the different med schools and see which you actually like and would be interested in finding more about",
+        "Study for the MCAT",
+        "Try to get some clinical experience",
+        "Maintain a high GPA",
+        "Join a club related to the field",
+        "Try not to be too pressured and cry",
+        "Think about what you want to specialize in",
+        "Try to learn to cook to save money",
+        "Try to sleep early to be able to study better"
     ]
 }, {
     id: 2,
     semName: 'WINTER 2023',
     taskList: [
-        'Do something',
-        'Do some other thing',
-        "Some task that's really long for some reason and I'm just making stuff up to take up more space.",
-        "Testing overflow so this list should be really long yayyyyy",
-        "Some task 1",
-        "Some task 2",
-        "Some task 3",
-        "Some task 4"
+        'Go visit some campuses',
+        'Find a part time job',
+        "Ask professors if they are willing to write some letters of recommendations for you",
+        "Make more friends in classes",
+        "Get some leadership roles",
+        "Volunteer",
+        "Eat out less",
+        "Get ahead in work so that you can go on a trip for break"
     ]
 }, {
     id: 3,
     semName: 'SPRING 2024',
     taskList: [
-        "Some task 1",
-        "Some task 2",
-        "Some task 3",
-        "Some task 4"
+        "Make more friends",
+        "Eat out less",
+        "Get letters of recommendations",
+        "Study for MCAT"
     ]
 }, {
     id: 4,
     semName: 'MAYMESTER 2024',
     taskList: [
-        "Some task 1",
-        "Some task 2",
-        "Some task 3",
-        "Some task 4"
+        "Study for MCAT",
+        "Maintain high GPA",
+        "Get clinical experience",
+        "Talk more with professors"
     ]
 }, {
     id: 5,
     semName: 'FALL 2024',
     taskList: [
-        "Some task 1",
-        "Some task 2",
-        "Some task 3",
-        "Some task 4"
+        "Try to be a TA for a professor",
+        "Volunteer",
+        "Confirm a specialization",
+        "Confirm a Medical School",
+        "Study for MCAT"
     ]
 }
 ];
