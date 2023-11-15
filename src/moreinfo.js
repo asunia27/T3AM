@@ -124,7 +124,7 @@ const Info = () => {
     if (!schoolDetail) {
         return (
             <div>
-                <h1>School Not Found</h1>
+                <h1 style={{color: '#4692A2'}}>School Not Found</h1>
                 <NavLink to='/T3AM/about' className='bm-link'>Back To Search</NavLink>
             </div>
         );
