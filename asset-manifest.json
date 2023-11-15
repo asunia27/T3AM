@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/T3AM/static/css/main.ce6f5c30.css",
-    "main.js": "/T3AM/static/js/main.6f2af61d.js",
+    "main.js": "/T3AM/static/js/main.6115c7cc.js",
     "index.html": "/T3AM/index.html",
     "main.ce6f5c30.css.map": "/T3AM/static/css/main.ce6f5c30.css.map",
-    "main.6f2af61d.js.map": "/T3AM/static/js/main.6f2af61d.js.map"
+    "main.6115c7cc.js.map": "/T3AM/static/js/main.6115c7cc.js.map"
   },
   "entrypoints": [
     "static/css/main.ce6f5c30.css",
-    "static/js/main.6f2af61d.js"
+    "static/js/main.6115c7cc.js"
   ]
 }
