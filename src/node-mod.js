@@ -76,10 +76,15 @@ export default function NodeEdit() {
         //function to add task
         const addTask = () => {
             //create temp then push new task then replace
-            let holdArr = taskList;
-            holdArr.push(task);
-            setTaskList(holdArr);
-            setTask("");
+            if(task !== ""){
+                let holdArr = taskList;
+                holdArr.push(task);
+                setTaskList(holdArr);
+                setTask("");
+            }
+            else{
+                Notif('You cannot add an empty task!', 'error', '/');
+            }
         }
     
         //function to remove task, needs index to filter out
