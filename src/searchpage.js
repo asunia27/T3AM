@@ -31,6 +31,10 @@ const SearchPage = () => {
 
     return (
         <div className="Search">
+            <div className="blurb">
+                <h3 style={{ color: '#4692A2' }}>Medical School Information</h3>
+                <p style={{ color: '#4692A2' }}>Type into the search bar the school you're looking for information on!<br></br>Alternatively, search with an empty field to see all schools currently in our database!</p>
+            </div>
             <input
                 className='form-control mb-3'
                 type="text"
