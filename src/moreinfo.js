@@ -125,7 +125,7 @@ const Info = () => {
         return (
             <div>
                 <h1 style={{color: '#4692A2'}}>School Not Found</h1>
-                <NavLink to='/T3AM/about' className='bm-link'>Back To Search</NavLink>
+                <NavLink to='/T3AM/about' className='bm-link'><div>Back To Search</div></NavLink>
             </div>
         );
     }
@@ -141,7 +141,7 @@ const Info = () => {
                     onChange={handleNotesChange}
                 />
                 <div className='backarea'>
-                    <NavLink to='/T3AM/about' className='bm-link'>Back To Search</NavLink>
+                    <NavLink to='/T3AM/about' className='bm-link'><div>Back To Search</div></NavLink>
                 </div>
             </div>
             <div className='title'>
