@@ -10,9 +10,9 @@ const Sidebar = (props) => {
       <NavLink to='/T3AM/' className='bm-link'>
         <div>Home</div>
       </NavLink>
-      <NavLink to='/T3AM/timeline' className='bm-link'>
+      {/*<NavLink to='/T3AM/timeline' className='bm-link'>
         <div>Edit Timeline</div>
-      </NavLink>
+  </NavLink>*/}
       <NavLink to='/T3AM/about' className='bm-link'>
         <div>Medical School Information</div>
       </NavLink>
