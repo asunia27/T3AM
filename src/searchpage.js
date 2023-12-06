@@ -45,12 +45,12 @@ const SearchPage = () => {
             />
 
             {filteredSchools.map((school, index) => (
-                <div key={index} className="result">
-                    <Link to={`/T3AM/moreinfo/${school.id}`} key={school.id} className='result'>
+                <Link to={`/T3AM/moreinfo/${school.id}`} key={school.id} className="result">
+                <div key={index} className="result-box">
                     <h2>{school.name}</h2>
                     <p>{school.city + ', ' + school.state}</p>
-                    </Link>
                 </div>
+            </Link>            
             ))}
         </div>
     );
