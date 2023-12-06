@@ -5,10 +5,12 @@ import { faCircleDot } from '@fortawesome/free-solid-svg-icons';
 import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import NodeEdit from './node-mod';
 
 const testNodes = [{
-    id: 1,
-    semName: 'FALL 2023',
+    id: 2023.4,
+    semester: 'FALL',
+    year: '2023',
     taskList: [
         'Make some friends from classes',
         'Talk with at least 1 professor',
@@ -23,21 +25,9 @@ const testNodes = [{
         "Try to sleep early to be able to study better"
     ]
 }, {
-    id: 2,
-    semName: 'WINTER 2023',
-    taskList: [
-        'Go visit some campuses',
-        'Find a part time job',
-        "Ask professors if they are willing to write some letters of recommendations for you",
-        "Make more friends in classes",
-        "Get some leadership roles",
-        "Volunteer",
-        "Eat out less",
-        "Get ahead in work so that you can go on a trip for break"
-    ]
-}, {
-    id: 3,
-    semName: 'SPRING 2024',
+    id: 2024.1,
+    semester: 'SPRING',
+    year: '2024',
     taskList: [
         "Make more friends",
         "Eat out less",
@@ -45,17 +35,9 @@ const testNodes = [{
         "Study for MCAT"
     ]
 }, {
-    id: 4,
-    semName: 'MAYMESTER 2024',
-    taskList: [
-        "Study for MCAT",
-        "Maintain high GPA",
-        "Get clinical experience",
-        "Talk more with professors"
-    ]
-}, {
-    id: 5,
-    semName: 'FALL 2024',
+    id: 2024.4,
+    semester: 'FALL',
+    year: '2024',
     taskList: [
         "Try to be a TA for a professor",
         "Volunteer",
@@ -63,17 +45,16 @@ const testNodes = [{
         "Confirm a Medical School",
         "Study for MCAT"
     ]
-}
-];
+}];
 
-function Node({semester, nodeId, onOpen}) {
+function Node({semester, year, nodeId, onOpen}) {
 
     return (
         <>
             <div className='node-scroll' id={'node-'+nodeId}>
                 <div className='card mb-5 rounded-pill medium-blue-bg' style={{marginLeft: '8rem', marginRight: '8rem'}}>
                     <div className='card-body primary-text'>
-                        {semester}
+                        {semester + ' ' + year}
                     </div>
                 </div>
                 <div className='d-flex align-items-center'>
@@ -127,7 +108,7 @@ function EndNode({text, nodeId}) {
     }
 }
 
-function TaskBox({semester, tasks, isActive, onClose}) {
+function TaskBox({semester, year, tasks, isActive, onClose}) {
     if (isActive) {
     {console.log('opening modal')}
     return (
@@ -136,15 +117,19 @@ function TaskBox({semester, tasks, isActive, onClose}) {
                 <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <div className="modal-content dark-blue-bg border outer-border">
                         <div className="modal-header border-style">
-                            <h1 className="modal-title fs-5 primary-text" id="">{semester}</h1>
+                            <h1 className="modal-title fs-5 primary-text" id="">{semester + ' ' + year}</h1>
                             <FontAwesomeIcon icon={faXmark} onClick={onClose} className='x-btn'/>
                         </div>
                         <div className="modal-body">
-                            {tasks.map((t) => (
+                            {tasks.length > 0 ? tasks.map((t) => (
                                 <>
                                     <div className='task-container p-2 px-3 my-3 modal-text'>{t}</div>
                                 </>
-                            ))}
+                            )):
+                                <>
+                                    <div className='task-container p-2 px-3 my-3 modal-text'>This semester has no tasks.</div>
+                                </>
+                            }
                         </div>
                         <div className="modal-footer border-style">
                             <button type="button" className="btn btn-secondary btn-style" onClick={onClose}>Close</button>
@@ -158,8 +143,10 @@ function TaskBox({semester, tasks, isActive, onClose}) {
 
 export default function TimelineDisplay() {
 
+    const [isEditActive, setIsEditActive] = useState(false);
     const [currentNode, setCurrentNode] = useState(0);
-    const [activeIndex, setActiveIndex] = useState(-1);
+    const [activeTaskIndex, setActiveTaskIndex] = useState(-1);
+    const [nodeList, setNodeList] = useState(testNodes);
 
     function scrollNext() {
         //console.log('(NEXT) pre update ' + currentNode)
@@ -200,6 +187,67 @@ export default function TimelineDisplay() {
         
     }
 
+    function compareIds (a, b) {
+        if (a.id < b.id)
+            return -1;
+        else if (a.id > b.id)
+            return 1;
+        return 0;
+    }
+
+    function addNodeToList (sem, yr, tList) {
+        let semEnum;
+        switch (sem) {
+            case "SPRING":
+                semEnum = 1;
+                break;
+            case "MAYMESTER":
+                semEnum = 2;
+                break;
+            case "SUMMER":
+                semEnum = 3;
+                break;
+            case "FALL":
+                semEnum = 4;
+                break;
+            case "WINTER":
+                semEnum = 5;
+                break;
+        }
+        
+        let idCalc = parseFloat(yr + '.' + semEnum);
+
+        let newNode = {
+            id: idCalc,
+            semester: sem,
+            year: yr,
+            taskList: tList
+        };
+        let newList = [...nodeList, newNode];
+        newList.sort(compareIds);
+        console.log(newList);
+
+        setNodeList(newList);
+    }
+
+    function deleteNodeFromList(nodeId) {
+        let newList = nodeList.filter((node) => node.id !== nodeId);
+        setNodeList(newList);
+    }
+
+    function editNodeInList(oldId, newId, sem, yr, tList) {
+        let newList = nodeList.filter((node) => node.id !== oldId); //remove old node that was changed
+        let newNode = {
+            id: newId,
+            semester: sem,
+            year: yr,
+            taskList: tList
+        };
+        newList.push(newNode);
+        newList.sort(compareIds);
+        setNodeList(newList);
+    }
+
     return (
         <>
             <div className='' style={{position: 'absolute', marginTop: '10rem', zIndex: 1}}>
@@ -211,11 +259,11 @@ export default function TimelineDisplay() {
                 <div className='padding-container'></div> {/* empty div to pad the beginning of the timeline */}
                 <div className='padding-container'></div> {/* empty div to pad the beginning of the timeline */}
                 <EndNode text={'START'} nodeId={0}/>
-                {testNodes.map((sem, i) => {
+                {nodeList.map((sem, i) => {
                     return [
                     <>
-                        <Node key={sem.id} semester={sem.semName} nodeId={i+1} onOpen={() => setActiveIndex(i+1)}/>
-                        <TaskBox semester={sem.semName} tasks={sem.taskList} isActive={activeIndex === i+1} onClose={() => setActiveIndex(-1)}/>
+                        <Node key={sem.id} semester={sem.semester} year={sem.year} nodeId={i+1} onOpen={() => setActiveTaskIndex(i+1)}/>
+                        <TaskBox semester={sem.semester} year={sem.year} tasks={sem.taskList} isActive={activeTaskIndex === i+1} onClose={() => setActiveTaskIndex(-1)}/>
                     </>]
                 })}
                 <EndNode text={'FINISH'} nodeId={testNodes.length + 1}/>
@@ -223,6 +271,11 @@ export default function TimelineDisplay() {
                 <div className='padding-container'></div> {/* empty div to pad the end of the timeline */}
                 <div className='padding-container'></div> {/* empty div to pad the end of the timeline */}
             </div>
+            <div className='extra-container d-flex justify-content-center'>
+                {isEditActive ? null : <button onClick={() => setIsEditActive(true)} className='btn btn-secondary btn-style rounded-pill p-3 px-5' style={{fontSize: "2rem"}}>Edit Timeline</button>}
+            </div>
+            
+                {isEditActive ? <div className='edit-feature-container'><NodeEdit onClose={() => setIsEditActive(false)} allNodes = {nodeList} onAddNode = {addNodeToList} onDeleteNode = {deleteNodeFromList} onEditNode = {editNodeInList}></NodeEdit></div> : null}
         </>
     );
 }

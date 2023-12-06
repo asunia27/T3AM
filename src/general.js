@@ -8,23 +8,24 @@ import React from 'react';
 */}
 
 {/* Dropdown menu. Self explanatory */}
-export default function DropdownSelect({placeholder, options, fnc}) {
-    const listItems = options.map(item => 
-        <option value={item}>{item}</option>
-    );
-    if(fnc !== '-'){
+export default function DropdownSelect({placeholder, options, fnc, editMode}) {
+    
+    if(!editMode){
         return (
             <select className='form-select' onChange={ (e) => {fnc(e.target.value)}}>
                 <option value="" disabled selected hidden>{placeholder}</option>
-                {listItems}
+                {options.map(item => 
+                    <option value={item}>{item}</option>
+                )}
             </select>
         );
     }
     else{
         return (
-            <select className='form-select'>
-                <option value="" disabled selected hidden>{placeholder}</option>
-                {listItems}
+            <select className='form-select' onChange={ (e) => {fnc(e.target.value)}}>
+                {options.map(item => 
+                    placeholder===item ? <option value={item} selected>{item}</option> : <option value={item}>{item}</option>
+                )}
             </select>
         ); 
     }
