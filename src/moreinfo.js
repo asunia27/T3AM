@@ -22,6 +22,26 @@ const schoolDetails = {
             "Physics - 8 semester credit hours"
         ],
     },
+    1: {
+        universityName: "Texas A&M School of Medicine",
+        location: "College Station, Texas",
+        logoSrc: "https://cdn.discordapp.com/attachments/199610242852454400/1181887604900249732/tamu_400x400.jpg?ex=6582b19b&is=65703c9b&hm=0e82b9740145f1972c785d437d0370e5f4f11826c8efd068dc4336deabf6ebea&",
+        gpaRequirement: "3.84",
+        meanMcatScore: "512",
+        acceptanceRate: "5.4%",
+        applicationFee: "$0",
+        amcasAccepted: "No",
+        aacomas: "No",
+        courseworkDescription: [
+            "General Biology - 8 semester credit hours", <br/>,
+            "Advanced Biological Sciences - 6 semester credit hours", <br/>,
+            "General Chemistry - 8 semester credit hours", <br/>,
+            "Organic Chemistry - 8 semester credit hours", <br/>,
+            "General Physics - 8 semester credit hours", <br/>,
+            "Math-Based Statistics - 3 semester credit  hours", <br/>,
+            "English - 6 semester credit hours"
+        ],
+    },
     2: {
         universityName: "Baylor College of Medicine",
         location: "Houston, Texas",
