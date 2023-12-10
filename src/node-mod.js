@@ -304,7 +304,7 @@ export default function NodeEdit({onClose, allNodes, onAddNode, onDeleteNode, on
                     <button className='btn btn-primary btn-color mx-3' onClick={ () => saveNode()}>Add</button>}
                     {" "}
                     {/*on click, needs to exit and discard changes - maybe don't even need*/}
-                    <button className='btn btn-primary btn-color mx-3' onClick={ () => clearNode()}>cancel</button>
+                    <button className='btn btn-primary btn-color mx-3' onClick={ () => clearNode()}>Cancel</button>
                 </div>
             </div>
         );
