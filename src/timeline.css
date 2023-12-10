@@ -104,13 +104,16 @@
 
 .btn-style {
     background-color: #4692A2;
-    color: #0F3845;
+    color: white;
     font-weight: 500;
+    border-color: #2b85a1;
 }
 
 .btn-style:hover {
     background-color: #97C0C8;
     color: #0F3845;
+    font-weight: 500;
+    border-color: #2b85a1;
 }
 
 .x-btn {

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 80%;
+    height: 37rem;
 }
 
 .nodeEdit{
@@ -14,10 +14,10 @@
 }
 
 .nodeMod {
-    position: sticky;
+    /*position: sticky;
     height: 100%;
     top: 0;
-    right: 0;
+    right: 0;*/
     width: 20rem;
     background-color: #DAE0E3;
     padding: 15px;
@@ -47,6 +47,11 @@ body {
     cursor: pointer;
 }
 
+.warning:hover {
+    color: #ff991c;
+    cursor: pointer;
+}
+
 .task-style {
     height: fit-content;
     width: 100%;
@@ -57,7 +62,7 @@ body {
 }
 
 .taskList-container {
-    height: 12rem;
+    height: 15rem;
     width: 100%;
     overflow-y: auto;
 }
@@ -69,11 +74,12 @@ body {
 }
 
 .task-x:hover {
-    color: #4692A2;
+    color: #ff991c;
     cursor: pointer;
 }
 
 .btn-color {
+    width: 5rem;
     background-color: #4692A2;
     border-color: #4692A2;
 }

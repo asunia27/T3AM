@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Notif from './notif';
 import DropdownSelect from './general';
+import './timeline.css'
 
 export default function Inquiry() {
     const fieldList = [
@@ -27,10 +28,10 @@ export default function Inquiry() {
         let valid = true;
         if(!fieldList.includes(field) || !topicList.includes(topic)){
             if(!fieldList.includes(field)){
-                Notif('Semester field is not filled in!', 'error', '/');
+                Notif('Field has not been selected!', 'error', '/');
             }
             if(!topicList.includes(topic)){
-                Notif('Year field is not filled in!', 'error', '/');
+                Notif('Inquiry type has not been selected!', 'error', '/');
             }
             valid = false;
         }
@@ -62,7 +63,7 @@ export default function Inquiry() {
                 <textarea value = {inq} onChange={ (e) => setInq(e.target.value)} name='inquiryInput' className='form-control' placeholder='Inquiry begins here...' style={{minHeight: '15rem'}}></textarea>
             </div>
             <div className='mb-5'>
-                <button onClick={ () => sendInquiry() } className='btn btn-primary btn-lg px-5' style={{backgroundColor: '#2b85a1'}}>Send</button>
+                <button onClick={ () => sendInquiry() } className='btn btn-primary btn-lg px-5 btn-style'>Send</button>
             </div>  
         </div>
     );

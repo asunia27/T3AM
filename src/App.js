@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App" id ="outer-container">
         <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
-        <h1 className='my-4'>Medway</h1>
+        {/*<h1 className='my-4'>Medway</h1>*/}
         <div className='d-flex justify-content-center'>
           <Main />
         </div>
@@ -31,7 +31,7 @@ function App() {
 const Main = () => (
   <Routes>
     <Route path='/T3AM/' Component={Home}></Route>
-    <Route path='/T3AM/timeline' Component={Timeline}></Route>
+    {/*<Route path='/T3AM/timeline' Component={Timeline}></Route>*/}
     <Route path='/T3AM/about' Component={About}></Route>
     <Route path='/T3AM/contact' Component={Contact}></Route>
     <Route path='/T3AM/moreinfo/:id' element={<Info />} />

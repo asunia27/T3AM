@@ -1,121 +1,125 @@
 body {
-    background-color: #032731;
+  background-color: #032731;
 }
+
+.page-container {
+  height: 100vh;
+  width: 100%;
+}
+
+.info-side-container {
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  overflow-y: auto
+}
+
 .notes-box {
-    position: absolute;
-    left: 0;
-    top: 0px;
-    width: 250px; 
-    height: 890px;
-    background-color: #0C404F;
-    padding: 20px;
-  }
+  position: sticky;
+  left: 0;
+  width: 25%; 
+  height: 100%;
+  background-color: #0C404F;
+  padding: 2rem;
+}
   
-  .notes-textarea {
-    width: 100%;
-    height: 60%;
-    resize: none;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #DAE0E3;
-    font-size: 16px;
-    outline: none;
-    border-radius: 5px;
-    border-radius: 15px;
-  }
-  .notes-box h2 {
-    position:relative;
-    color: #4692A2;
-    padding-top: 50px;
-    text-align: left;
-    padding-left: 10px;
-  }
+.notes-textarea {
+  width: 100%;
+  height: 75%;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #DAE0E3;
+  background-color: #DAE0E3;
+  font-size: 16px;
+  outline: none;
+  border-radius: 5px;
+  border-radius: 15px;
+}
+.notes-box h2 {
+  color: #4692A2;
+  padding-top: 50px;
+  text-align: left;
+}
   
-  .reqs {
-    position: absolute;
-    top: 200px;
-    left: 550px;
-    width: 600px; 
-    height: 280px;
-    background-color: #DAE0E3;
-    border-right: 1px solid #ccc;
-    padding: 5px;
-    border-radius: 15px;
-  }
+.reqs {
+  height: 280px;
+  width: 100%;
+  background-color: #DAE0E3;
+  border: 3px solid #4692A2;
+  padding: 1.5rem;
+  border-radius: 15px;
+}
 
-  .reqs li{
-    list-style: none;
-    text-align: left;
-    padding: 10px;
-    top: 20px; 
-    width: 100%; 
-  }
+.reqs li{
+  list-style: none;
+  text-align: left;
+  padding: 10px;
+  padding-left: 1rem;
+  width: 100%;
+  background-color: #4692A2;
+  color:#DAE0E3; 
+}
 
-  .coursework {
-    position: absolute;
-    left: 260px;
-    top: 490px;
-    width: 890px;
-    height: 400px;
-    background-color: #DAE0E3;
-    border-right: 1px solid #ccc;
-    padding: 0px;
-    text-align: left;
-    border-radius: 15px;
-  }
-  .coursework h2 {
-    padding: 10px;
-    text-align: left;
-  }
-  .coursework p {
-    padding-left: 10px;
-  }
+.reqs h2 {
+  color:#4692A2;
+  text-align: left;
+}
 
-  .title > h1 {
-    position: absolute;
-    font-weight: 700px;
-    font-size: 40px;
-    text-align: left;
-    color: #DAE0E3;
-    left: 260px;
-    top: 100px;
+.coursework {
+  width: 100%;
+  background-color: #DAE0E3;
+  border: 3px solid #4692A2;
+  padding: 1.5rem;
+  text-align: left;
+  border-radius: 15px;
+}
+.coursework h2 {
+  color:#4692A2;
+  text-align: left;
+}
+.coursework p {
+  color: #DAE0E3;
+  margin-bottom: 0rem;
+  margin-top: 1rem;
+  background-color: #4692A2;
+  border-radius: 15px;
+  padding: 10px;
+  padding-left: 1rem;
+}
 
-  }
-  .title > h2 {
-    position: absolute;
-    font-weight: 700px;
-    font-size: 20px;
-    color: #4692A2;
+.title > h1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  text-align: left;
+  color: #DAE0E3;
+}
+.title > h2 {
+  font-weight: 500;
+  text-align: left;
+  color: #4692A2;
+}
 
-    left: 260px;
-    top: 150px;
-  
-  }
-  .utdlogo img {
-    position: absolute; 
-    left: 260px; 
-    top: 200px;
-    width: 280px;
-    height: 280px;
-    border: 1px solid blue;
-    background-color: white;
-    border-radius: 15px;
-  }
-  .backarea {
-    position: absolute;
-    border: 1px solid #0C404F; 
-    padding: 10px;
-    display: inline-block;
-    background-color: #DAE0E3;
-    border-radius: 15px;
-    width: 210px;
-    top: 680px;
-    left: 20px;
+.title {
+  margin-bottom: 2rem;
+}
+
+.utdlogo img {
+  width: 280px;
+  height: 280px;
+  border: 3px solid #4692A2;
+  background-color: white;
+  border-radius: 15px;
+}
+.backarea {
+  border: 1px solid #0C404F; 
+  padding: 10px;
+  display: inline-block;
+  background-color: #4692A2;
+  border-radius: 15px;
 }
 
 .bm-link {
-    text-decoration: none;
-    color: #4692A2;
-    font-size: 40;
-    font-weight: 800;
+  text-decoration: none;
+  color: #DAE0E3;
+  font-weight: 600;
 }

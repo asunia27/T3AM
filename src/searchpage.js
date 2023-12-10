@@ -46,30 +46,44 @@ const SearchPage = () => {
 
     return (
         <div className="Search">
-            <input
-                id="searchInput"
-                className='form-control mb-3'
-                type="text"
-                placeholder="Search here"
-                onChange={handleChange}
-                value={searchInput}
-                onKeyPress={(e) => {
-                    if (e.key === 'Enter') {
-                        handleSearch();
-                        localStorage.setItem('rValue', JSON.stringify(searchInput));
-                        setStoredValue(searchInput);
-                    }
-                }}
-            />
-
-            {filteredSchools.map((school, index) => (
-                <Link to={`/T3AM/moreinfo/${school.id}`} key={school.id} className="result">
-                <div key={index} className="result-box">
-                    <h2>{school.name}</h2>
-                    <p>{school.city + ', ' + school.state}</p>
+            <div className='top-bar'>
+                <div className='d-flex flex-column align-items-center'>
+                    <div className="blurb">
+                        <h3 style={{ color: '#4692A2' }}>Medical School Information</h3>
+                        <p style={{ color: '#4692A2' }}>Type into the search bar the school you're looking for information on!<br></br>Alternatively, search with an empty field to see all schools currently in our database!</p>
+                    </div>
+                    <input
+                        id="searchInput"
+                        className='form-control mb-3'
+                        style={{ width: '40rem' }}
+                        type="text"
+                        placeholder="Search here"
+                        onChange={handleChange}
+                        value={searchInput}
+                        onKeyPress={(e) => {
+                            if (e.key === 'Enter') {
+                                handleSearch();
+                                localStorage.setItem('rValue', JSON.stringify(searchInput));
+                                setStoredValue(searchInput);
+                            }
+                        }}
+                    />
                 </div>
-            </Link>            
-            ))}
+            </div>
+
+            <div className='result-container d-flex flex-column mb-5'>
+                {filteredSchools.length > 0 ? filteredSchools.map((school, index) => (
+                    <Link to={`/T3AM/moreinfo/${school.id}`} key={school.id} className="result my-2">
+                        <div key={index} className="result-box pt-3">
+                            <h2 className='rounded-pill p-2 px-5'>{school.name}</h2>
+                            <p>{school.city + ', ' + school.state}</p>
+                        </div>
+                    </Link>            
+                )):
+                <div className='mt-3' style={{color: '#16697A'}}>
+                    <h3>No schools found.</h3>
+                </div>}
+            </div>
         </div>
     );
 };

@@ -151,39 +151,50 @@ const Info = () => {
     }
 
     return (
-        <div>
+        <div className='page-container d-flex'>
             <div className='notes-box'>
                 <h2>Notes</h2>
                 <textarea
-                    className='notes-textarea'
+                    className='notes-textarea mb-4'
                     placeholder='Notes Here'
                     value={notes}
                     onChange={handleNotesChange}
                 />
-                <div className='backarea'>
+                <div className='backarea px-4'>
                     <NavLink to='/T3AM/about' className='bm-link'><div>Back To Search</div></NavLink>
                 </div>
             </div>
-            <div className='title'>
-                <h1>{schoolDetail.universityName}</h1>
-                <h2>{schoolDetail.location}</h2>
-            </div>
-            <div className='utdlogo'>
-                <img src={schoolDetail.logoSrc} alt="Logo" />
-            </div>
-            <div className='reqs'>
-                <ul>
-                    <li>Average GPA: {schoolDetail.gpaRequirement}</li>
-                    <li>Mean MCAT Score: {schoolDetail.meanMcatScore}</li>
-                    <li>Acceptance Rate: {schoolDetail.acceptanceRate}</li>
-                    <li>Application Fee: {schoolDetail.applicationFee}</li>
-                    <li>AMCAS Accepted: {schoolDetail.amcasAccepted}</li>
-                    <li>AACOMAS Accepted: {schoolDetail.aacomas}</li>
-                </ul>
-            </div>
-            <div className='coursework'>
-                <h2>Required Coursework</h2>
-                <p>{schoolDetail.courseworkDescription}</p>
+            <div className='d-flex flex-column info-side-container ms-5 pe-5'> 
+                <div className='title'>
+                    <h1>{schoolDetail.universityName}</h1>
+                    <h2>{schoolDetail.location}</h2>
+                </div>
+                <div className='d-flex' style={{marginBottom: '2rem'}}>
+                    <div className='utdlogo' style={{marginRight: '2rem'}}>
+                        <img src={schoolDetail.logoSrc} alt="Logo" />
+                    </div>
+                    <div className='reqs d-flex flex-column'>
+                        <div>
+                            <h2>Fast Facts</h2>
+                        </div>
+                        <div className='d-flex' style={{marginRight: '1rem'}}>
+                            <ul className='col-6 me-3' style={{paddingLeft: '0rem'}}>
+                                <li className='rounded-pill my-3'>Average GPA: {schoolDetail.gpaRequirement}</li>
+                                <li className='rounded-pill my-3'>Mean MCAT Score: {schoolDetail.meanMcatScore}</li>
+                                <li className='rounded-pill my-3'>Acceptance Rate: {schoolDetail.acceptanceRate}</li>
+                            </ul>
+                            <ul className='col-6' style={{paddingLeft: '0rem'}}>
+                                <li className='rounded-pill my-3'>Application Fee: {schoolDetail.applicationFee}</li>
+                                <li className='rounded-pill my-3'>AMCAS Accepted: {schoolDetail.amcasAccepted}</li>
+                                <li className='rounded-pill my-3'>AACOMAS Accepted: {schoolDetail.aacomas}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div className='coursework'>
+                    <h2>Required Coursework</h2>
+                    <p>{schoolDetail.courseworkDescription}</p>
+                </div>
             </div>
         </div>
     );

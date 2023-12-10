@@ -280,8 +280,8 @@ export default function NodeEdit({onClose, allNodes, onAddNode, onDeleteNode, on
                     />{" "}
                     <FontAwesomeIcon className='plus-btn' icon={faCirclePlus} onClick={addTask}/>
                 </div>
-                <div>
-                    <div className="taskList-container pe-2 mb-4">
+                <div className=''>
+                    <div className="taskList-container pe-2 mb-2">
                         {taskList.length > 0 && 
                         taskList.map((task, index) => 
                                 //need to make everything here look good
@@ -297,14 +297,13 @@ export default function NodeEdit({onClose, allNodes, onAddNode, onDeleteNode, on
                             )}
                     </div>
                 </div>
-                <div className='mb-5'>
+                <div className=''>
                     {/*on click, needs to create / save node info - store in node and then push to nodeList*/}
                     {editingNode ? 
                     <button className='btn btn-primary btn-color mx-3' onClick={ () => saveNodeEdit()}>Save</button> :
                     <button className='btn btn-primary btn-color mx-3' onClick={ () => saveNode()}>Add</button>}
-                    {" "}
                     {/*on click, needs to exit and discard changes - maybe don't even need*/}
-                    <button className='btn btn-primary btn-color mx-3' onClick={ () => clearNode()}>cancel</button>
+                    <button className='btn btn-primary btn-color mx-3' onClick={ () => clearNode()}>Cancel</button>
                 </div>
             </div>
         );
@@ -329,7 +328,7 @@ export default function NodeEdit({onClose, allNodes, onAddNode, onDeleteNode, on
                                     <FontAwesomeIcon className='icon-btn' icon={faPen} onClick={() => handleEdit(node)} />
                                 </div>
                                 <div className='col-1'>
-                                    <FontAwesomeIcon className='icon-btn' icon={faTrash} onClick={ () => onDeleteNode(node.id)} />
+                                    <FontAwesomeIcon className='icon-btn warning' icon={faTrash} onClick={ () => onDeleteNode(node.id)} />
                                 </div>
                             </div>
                         )}

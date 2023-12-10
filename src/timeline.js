@@ -118,7 +118,7 @@ function TaskBox({semester, year, tasks, isActive, onClose}) {
                     <div className="modal-content dark-blue-bg border outer-border">
                         <div className="modal-header border-style">
                             <h1 className="modal-title fs-5 primary-text" id="">{semester + ' ' + year}</h1>
-                            <FontAwesomeIcon icon={faXmark} onClick={onClose} className='x-btn'/>
+                            {/*<FontAwesomeIcon icon={faXmark} onClick={onClose} className='x-btn'/>*/}
                         </div>
                         <div className="modal-body">
                             {tasks.length > 0 ? tasks.map((t) => (
